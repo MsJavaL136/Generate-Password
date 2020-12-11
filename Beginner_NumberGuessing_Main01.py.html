@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+import random
+print('Hello, what is your name?')
+user_name = input()
+
+Secretnumber = random.randint(30,50) 
+    
+for tries in range(1,7):
+    print(user_name, 'Can you guess a number between 30 and 50')
+    guess = int(input())
+    
+    
+    if guess == Secretnumber:
+        tries += 1
+        print("Congratulations ! You win after " + str(tries) + " tries ! ")
+        break
+
+
+    elif guess < 30 or guess > 50:
+        print(user_name, 'Your input is not valid')
+        tries += 1
+        
+    elif guess < Secretnumber: 
+        tries += 1
+        print(user_name, 'too low')
+       
+    elif guess > Secretnumber:
+        tries += 1
+        print(user_name, 'too high')
+    
+    elif tries > 6:
+        break
+        
+                   
+
+
+# In[ ]:
+
+
+# project idea: https://github.com/laibanasir/username-password-checker/blob/master/userpass.py
+# edge case e.g. if guess < 30 or guess > 50 
+### https://codereview.stackexchange.com/questions/212292/guess-the-number-game-by-a-python-beginner
+# (congrats user_name, you win after "str(tries)'' tries"  
+
+# 怎解print(" 'You did not guess the number. It was' str(Secretnumber)")???
+                                                             
+#注意 variable, INTEGER, string TypeError: '<' not supported between instances of 'int' and 'str'
+#experiment, let you did not guess the number appear only AFTER the line guess is too high     
+
+# import the random module for generation of random numbers
+
